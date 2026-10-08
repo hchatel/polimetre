@@ -11,6 +11,8 @@
     "test": "vitest run",
     "test:watch": "vitest",
     "test:e2e": "playwright test",
+    "kandidator:download": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON scripts/kandidator/download.ts",
+    "kandidator:shortlist": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON scripts/kandidator/shortlist.ts",
     "db:generate": "drizzle-kit generate",
     "db:migrate": "drizzle-kit migrate",
     "db:studio": "drizzle-kit studio",

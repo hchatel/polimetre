@@ -37,11 +37,12 @@ Node 24 / pnpm 11, scripts, Vitest, Playwright (desktop + mobile), Drizzle confi
 
 Two-product vision, Kandidator methodology v0, ADR-009 to ADR-013.
 
-### S2 — Scrutin shortlist script · `todo`
+### S2 — Scrutin shortlist script · `done`
 
-- `scripts/`: download scrutins + groups of the current legislature (see `DATA_SOURCES.md`), validate with Zod, normalize per-group distributions.
-- Rank by discrimination and cohesion (`METHODOLOGY.md` §11), output a committed shortlist (number, title, date, per-group positions, source URL, retrieval date).
-- No question wording here: that is D3.
+- `scripts/kandidator/`: `pnpm kandidator:download` then `pnpm kandidator:shortlist` (see `DATA_SOURCES.md`). Zod validation, per-group distributions, ranking of `METHODOLOGY.md` §11.1.
+- Output: `data/kandidator/shortlist-l17.{json,md}`, 150 scrutins with per-group breakdowns, source URLs and retrieval date.
+- `src/domain/kandidator/`: `parameters.ts` (`MIN_EXPRESSED`), `types.ts`, `group-position.ts` (§8.1) already written and shared with S3.
+- Note for S4/D8: UDR (`PO847173`, until 2025-09-04) and UDDPLR (`PO872880`, from 2025-09-05) are distinct groups in the data. How (or whether) to relate them is an open editorial question; they are never merged automatically.
 
 ### S3 — Domain: scoring & adaptive selection · `todo`
 
@@ -49,7 +50,7 @@ Two-product vision, Kandidator methodology v0, ADR-009 to ADR-013.
 - Unit tests, including the guardrails of §9 (reachability, determinism, neutral-only).
 - Uses an obviously fictional test fixture (groups `A`, `B`, `C`…), never real political data.
 
-### S4 — Real question pool · `blocked` (S2, D3, D8)
+### S4 — Real question pool · `blocked` (D3, D8)
 
 - `src/data/kandidator/`: questions, groups, scrutin breakdowns, candidate associations.
 - Zod schemas + test: every question references a scrutin in the dataset, every scrutin and association has a source URL.
