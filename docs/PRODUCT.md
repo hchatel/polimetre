@@ -21,7 +21,7 @@ Polimetre explores whether parliamentary voting records can provide a more concr
 | | **Kandidator** (phase 1 — MVP) | **Polimetre** (phase 2) |
 |---|---|---|
 | Goal | Fast, fun entry point; shareable | Informed, nuanced reflection |
-| Session | ~8–12 adaptive questions, a few minutes | As many topics as the user wants |
+| Session | ~6–12 adaptive questions (18 at most), a few minutes | As many topics as the user wants |
 | Answers | Yes / Neutral-don't know / No | 5-point scale + skip + personal importance |
 | Content per question | One short neutral sentence | Topic, context, summary, arguments for and against |
 | Data | Hard-coded curated pool in the repo | Database, ingestion pipeline, editorial back-office |

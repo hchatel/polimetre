@@ -7,6 +7,8 @@ export type RankingOptions = {
   excludedGroupRefs: readonly string[];
   minKnownGroupsRatio: number;
   size: number;
+  /** Scrutin numbers added after the ranked ones when not already kept (maintainer choice). */
+  required: readonly number[];
 };
 
 type Sign = "+" | "-" | "0";
@@ -88,7 +90,8 @@ export const sameSplit = (a: ScrutinAnalysis, b: ScrutinAnalysis): boolean => {
  * METHODOLOGY.md §11 — greedy shortlist. At each step, keeps the scrutin with the best
  * score / (1 + number of already kept scrutins with the same split), so that different
  * splits of the groups are represented. Ties go to the highest participation, then to the
- * lowest scrutin number: deterministic.
+ * lowest scrutin number: deterministic. Required scrutins not already kept are then appended
+ * in number order; each must be eligible.
  */
 export const rankScrutins = (
   scrutins: readonly Scrutin[],
@@ -120,6 +123,14 @@ export const rankScrutins = (
     for (const candidate of remaining) {
       if (sameSplit(candidate.analysis, best.analysis)) candidate.sameSplitKept++;
     }
+  }
+
+  const kept = new Set(shortlist.map((analysis) => analysis.scrutin.number));
+  for (const number of [...new Set(options.required)].sort((a, b) => a - b)) {
+    if (kept.has(number)) continue;
+    const required = remaining.find((candidate) => candidate.analysis.scrutin.number === number);
+    if (!required) throw new Error(`Required scrutin ${number} is missing or not eligible`);
+    shortlist.push(required.analysis);
   }
 
   return { shortlist, eligible };

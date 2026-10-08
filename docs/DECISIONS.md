@@ -206,3 +206,15 @@ Answers stay in the browser and in the shareable URL. Analytics are anonymous co
 ### Reason
 
 Political opinions are sensitive personal data under the GDPR (art. 9). Publishing aggregate preferences near an election could be mistaken for an electoral poll.
+
+---
+
+## ADR-014 — UDR left out of the Kandidator pool
+
+### Decision
+
+The UDR group (`PO847173`, until 2025-09-04) is left out of the Kandidator pool. Its successor UDDPLR (`PO872880`, from 2025-09-05) is kept. The two groups are never merged.
+
+### Reason
+
+Maintainer decision (2026-10-08). UDR no longer exists, so a result pointing to it would be of little use for 2027. Merging the two groups would assume a continuity that the data does not record. UDDPLR has no position on scrutins before 2025-09-05, so the pool includes enough later scrutins for it to be compared (`MIN_COMPARED`).

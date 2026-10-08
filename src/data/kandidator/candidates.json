@@ -1,0 +1,146 @@
+[
+  {
+    "id": "anasse-kazib",
+    "name": "Anasse Kazib",
+    "declarationSourceUrl": "https://www.revolutionpermanente.fr/Presidentielle-2027-Anasse-Kazib-veut-faire-entendre-la-voix-de-la-nouvelle-classe-ouvriere",
+    "declarationDate": "2026-06-01",
+    "associations": []
+  },
+  {
+    "id": "bruno-retailleau",
+    "name": "Bruno Retailleau",
+    "declarationSourceUrl": "https://lcp.fr/actualites/presidentielle-bruno-retailleau-choisi-comme-candidat-officiel-des-republicains-435440",
+    "declarationDate": "2026-04-19",
+    "associations": [
+      {
+        "groupRef": "PO845425",
+        "type": "party-forming-group",
+        "sourceUrls": [
+          "https://lcp.fr/actualites/presidentielle-bruno-retailleau-choisi-comme-candidat-officiel-des-republicains-435440",
+          "https://lcp.fr/actualites/assemblee-nationale-laurent-wauquiez-ferme-la-porte-a-une-coalition-gouvernementale-mais"
+        ],
+        "date": "2026-10-08"
+      }
+    ]
+  },
+  {
+    "id": "david-lisnard",
+    "name": "David Lisnard",
+    "declarationSourceUrl": "https://lcp.fr/actualites/je-suis-candidat-david-lisnard-quitte-lr-et-relance-le-debat-sur-une-primaire-a-droite",
+    "declarationDate": "2026-03-31",
+    "associations": []
+  },
+  {
+    "id": "edouard-philippe",
+    "name": "Édouard Philippe",
+    "declarationSourceUrl": "https://www.letemps.ch/monde/face-a-la-crise-politique-edouard-philippe-sort-du-bois-et-annonce-sa-candidature-a-la-presidentielle-francaise-2027",
+    "declarationDate": "2024-09-03",
+    "associations": [
+      {
+        "groupRef": "PO845470",
+        "type": "party-forming-group",
+        "sourceUrls": [
+          "https://www.touteleurope.eu/vie-politique-des-etats-membres/presidentielle-2027-qui-sont-les-candidats-deja-declares/",
+          "https://lcp.fr/actualites/laurent-marcangeli-elu-president-du-groupe-horizons-a-l-assemblee-nationale-434452"
+        ],
+        "date": "2026-10-08"
+      }
+    ]
+  },
+  {
+    "id": "eric-zemmour",
+    "name": "Éric Zemmour",
+    "declarationSourceUrl": "https://lcp.fr/actualites/presidentielle-2027-eric-zemmour-officialise-sa-candidature-441871",
+    "declarationDate": "2026-09-17",
+    "associations": []
+  },
+  {
+    "id": "fabien-roussel",
+    "name": "Fabien Roussel",
+    "declarationSourceUrl": "https://lcp.fr/actualites/fabien-roussel-officiellement-candidat-du-pcf-a-l-election-presidentielle-de-2027-441389",
+    "declarationDate": "2026-09-06",
+    "associations": [
+      {
+        "groupRef": "PO845514",
+        "type": "party-forming-group",
+        "sourceUrls": [
+          "https://lcp.fr/actualites/fabien-roussel-officiellement-candidat-du-pcf-a-l-election-presidentielle-de-2027-441389",
+          "https://lcp.fr/actualites/presidentielle-a-la-fete-de-l-huma-fabien-roussel-au-defi-de-prouver-l-utilite-d-une"
+        ],
+        "date": "2026-10-08"
+      }
+    ]
+  },
+  {
+    "id": "florian-philippot",
+    "name": "Florian Philippot",
+    "declarationSourceUrl": "https://www.franceinfo.fr/elections/presidentielle/presidentielle-2027-le-souverainiste-florian-philippot-annonce-sa-candidature-a-l-elysee_7993346.html",
+    "declarationDate": "2026-05-09",
+    "associations": []
+  },
+  {
+    "id": "francois-asselineau",
+    "name": "François Asselineau",
+    "declarationSourceUrl": "https://upr.fr/militantisme/19-ans-de-lupr-francois-asselineau-lance-sa-campagne-presidentielle-2027-et-nomme-marc-parigot-directeur-de-campagne/",
+    "declarationDate": "2026-03-21",
+    "associations": []
+  },
+  {
+    "id": "gabriel-attal",
+    "name": "Gabriel Attal",
+    "declarationSourceUrl": "https://lcp.fr/actualites/presidentielle-2027-gabriel-attal-officialise-sa-candidature-436721",
+    "declarationDate": "2026-05-22",
+    "associations": [
+      {
+        "groupRef": "PO845407",
+        "type": "group-member",
+        "sourceUrls": ["https://www.assemblee-nationale.fr/dyn/deputes/PA722190"],
+        "date": "2026-10-08"
+      }
+    ]
+  },
+  {
+    "id": "jean-luc-melenchon",
+    "name": "Jean-Luc Mélenchon",
+    "declarationSourceUrl": "https://lcp.fr/actualites/presidentielle-jean-luc-melenchon-officialise-sa-candidature-pour-2027-435851",
+    "declarationDate": "2026-05-03",
+    "associations": [
+      {
+        "groupRef": "PO845413",
+        "type": "party-forming-group",
+        "sourceUrls": [
+          "https://www.touteleurope.eu/vie-politique-des-etats-membres/presidentielle-2027-qui-sont-les-candidats-deja-declares/",
+          "https://lcp.fr/actualites/presidentielle-2027-en-cas-de-duel-rnlfi-mathilde-panot-ne-croit-pas-une-seconde-a-la"
+        ],
+        "date": "2026-10-08"
+      },
+      {
+        "groupRef": "PO845413",
+        "type": "group-support",
+        "sourceUrls": ["https://lcp.fr/actualites/presidentielle-2027-en-cas-de-duel-rnlfi-mathilde-panot-ne-croit-pas-une-seconde-a-la"],
+        "date": "2026-05-18"
+      }
+    ]
+  },
+  {
+    "id": "marine-le-pen",
+    "name": "Marine Le Pen",
+    "declarationSourceUrl": "https://lcp.fr/actualites/ce-soir-je-suis-candidate-a-l-election-presidentielle-annonce-marine-le-pen-438886",
+    "declarationDate": "2026-07-07",
+    "associations": [
+      {
+        "groupRef": "PO845401",
+        "type": "group-member",
+        "sourceUrls": ["https://www.assemblee-nationale.fr/dyn/deputes/PA720614"],
+        "date": "2026-10-08"
+      }
+    ]
+  },
+  {
+    "id": "nicolas-dupont-aignan",
+    "name": "Nicolas Dupont-Aignan",
+    "declarationSourceUrl": "https://www.franceinfo.fr/politique/nicolas-dupont-aignan/le-souverainiste-nicolas-dupont-aignan-se-lance-pour-la-4e-fois-dans-la-course-a-l-elysee_7118136.html",
+    "declarationDate": "2025-03-08",
+    "associations": []
+  }
+]

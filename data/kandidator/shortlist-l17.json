@@ -4,13 +4,13 @@
     {
       "id": "scrutins",
       "url": "https://data.assemblee-nationale.fr/static/openData/repository/17/loi/scrutins/Scrutins.json.zip",
-      "retrievedAt": "2026-10-08T09:28:01.047Z",
-      "sha256": "b40caef3e71a40030f9a60d0eb0f04360ff773606e083bfbf821905ea8414056"
+      "retrievedAt": "2026-10-08T14:36:06.157Z",
+      "sha256": "02d0b4584757a7c3cfafc0de8f00d3bf865fd6cee507945042fc969e8bc5b975"
     },
     {
       "id": "organes",
       "url": "https://data.assemblee-nationale.fr/static/openData/repository/17/amo/tous_acteurs_mandats_organes_xi_legislature/AMO30_tous_acteurs_tous_mandats_tous_organes_historique.json.zip",
-      "retrievedAt": "2026-10-08T09:28:12.511Z",
+      "retrievedAt": "2026-10-08T14:36:15.091Z",
       "sha256": "1f9b65baf46d532b848a612d88d8af687327887e64b50b4e978d1ddc7b706c69"
     }
   ],
@@ -18,14 +18,17 @@
     "MIN_EXPRESSED": 3,
     "minKnownGroupsRatio": 0.667,
     "size": 150,
+    "required": [
+      468
+    ],
     "excludedFromRanking": [
       "PO840056"
     ]
   },
   "stats": {
-    "scrutinsRead": 8608,
+    "scrutinsRead": 8609,
     "excluded": 14,
-    "eligible": 6853
+    "eligible": 6854
   },
   "excludedScrutins": [
     {
@@ -24773,6 +24776,170 @@
           "abstention": 0,
           "nonVoting": 0,
           "absent": 10,
+          "reportedVoluntaryNonVoting": 0,
+          "majorityPosition": "for",
+          "position": null
+        }
+      ]
+    },
+    {
+      "rank": 151,
+      "number": 468,
+      "uid": "VTANR5L17V468",
+      "date": "2024-11-28",
+      "title": "l'amendement de suppression n° 4 de M. Sitzenstuhl et les amendements identiques suivants à l'article premier de la proposition de loi d'abrogation de la retraite à 64 ans (première lecture).",
+      "voteType": {
+        "code": "SPO",
+        "label": "scrutin public ordinaire"
+      },
+      "result": "rejeté",
+      "sourceUrl": "https://www.assemblee-nationale.fr/dyn/17/scrutins/468",
+      "score": 1.986,
+      "discrimination": 2,
+      "cohesion": 0.993,
+      "participation": 0.604,
+      "pattern": "PO845401:- PO845407:+ PO845413:- PO845419:- PO845425:+ PO845439:- PO845454:+ PO845470:+ PO845485:? PO845514:- PO847173:+",
+      "groups": [
+        {
+          "ref": "PO845401",
+          "members": 124,
+          "for": 0,
+          "against": 81,
+          "abstention": 0,
+          "nonVoting": 0,
+          "absent": 43,
+          "reportedVoluntaryNonVoting": 0,
+          "majorityPosition": "against",
+          "position": -1
+        },
+        {
+          "ref": "PO845407",
+          "members": 94,
+          "for": 52,
+          "against": 0,
+          "abstention": 0,
+          "nonVoting": 2,
+          "absent": 40,
+          "reportedVoluntaryNonVoting": 0,
+          "majorityPosition": "for",
+          "position": 1
+        },
+        {
+          "ref": "PO845413",
+          "members": 71,
+          "for": 0,
+          "against": 69,
+          "abstention": 0,
+          "nonVoting": 0,
+          "absent": 2,
+          "reportedVoluntaryNonVoting": 0,
+          "majorityPosition": "against",
+          "position": -1
+        },
+        {
+          "ref": "PO845419",
+          "members": 66,
+          "for": 0,
+          "against": 43,
+          "abstention": 0,
+          "nonVoting": 0,
+          "absent": 23,
+          "reportedVoluntaryNonVoting": 0,
+          "majorityPosition": "against",
+          "position": -1
+        },
+        {
+          "ref": "PO845425",
+          "members": 47,
+          "for": 13,
+          "against": 0,
+          "abstention": 1,
+          "nonVoting": 0,
+          "absent": 33,
+          "reportedVoluntaryNonVoting": 1,
+          "majorityPosition": "for",
+          "position": 0.929
+        },
+        {
+          "ref": "PO845439",
+          "members": 38,
+          "for": 0,
+          "against": 33,
+          "abstention": 0,
+          "nonVoting": 0,
+          "absent": 5,
+          "reportedVoluntaryNonVoting": 0,
+          "majorityPosition": "against",
+          "position": -1
+        },
+        {
+          "ref": "PO845454",
+          "members": 36,
+          "for": 18,
+          "against": 0,
+          "abstention": 0,
+          "nonVoting": 0,
+          "absent": 18,
+          "reportedVoluntaryNonVoting": 0,
+          "majorityPosition": "for",
+          "position": 1
+        },
+        {
+          "ref": "PO845470",
+          "members": 34,
+          "for": 14,
+          "against": 0,
+          "abstention": 0,
+          "nonVoting": 0,
+          "absent": 20,
+          "reportedVoluntaryNonVoting": 0,
+          "majorityPosition": "for",
+          "position": 1
+        },
+        {
+          "ref": "PO845485",
+          "members": 23,
+          "for": 0,
+          "against": 2,
+          "abstention": 0,
+          "nonVoting": 0,
+          "absent": 21,
+          "reportedVoluntaryNonVoting": 0,
+          "majorityPosition": "against",
+          "position": null
+        },
+        {
+          "ref": "PO845514",
+          "members": 17,
+          "for": 0,
+          "against": 13,
+          "abstention": 0,
+          "nonVoting": 0,
+          "absent": 4,
+          "reportedVoluntaryNonVoting": 0,
+          "majorityPosition": "against",
+          "position": -1
+        },
+        {
+          "ref": "PO847173",
+          "members": 16,
+          "for": 3,
+          "against": 0,
+          "abstention": 0,
+          "nonVoting": 0,
+          "absent": 13,
+          "reportedVoluntaryNonVoting": 0,
+          "majorityPosition": "for",
+          "position": 1
+        },
+        {
+          "ref": "PO840056",
+          "members": 9,
+          "for": 0,
+          "against": 0,
+          "abstention": 0,
+          "nonVoting": 0,
+          "absent": 9,
           "reportedVoluntaryNonVoting": 0,
           "majorityPosition": "for",
           "position": null

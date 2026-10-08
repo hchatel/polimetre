@@ -22,4 +22,4 @@ export const MIN_QUESTIONS = 6;
 export const STOP_GAP = 15;
 
 /** §9 — the session stops after this many questions asked (Neutral included). */
-export const MAX_QUESTIONS = 12;
+export const MAX_QUESTIONS = 18;

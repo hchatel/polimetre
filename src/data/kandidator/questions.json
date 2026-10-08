@@ -1,0 +1,212 @@
+[
+  {
+    "id": "adhesion-ukraine-ue",
+    "scrutinNumber": 973,
+    "polarity": -1,
+    "topic": "Europe",
+    "text": "Faut-il faciliter l'adhésion de l'Ukraine à l'Union européenne pour qu'elle aboutisse au plus vite ?"
+  },
+  {
+    "id": "algorithmes-mineurs",
+    "scrutinNumber": 5172,
+    "polarity": 1,
+    "topic": "Numérique",
+    "text": "Les réseaux sociaux doivent-ils être responsables des contenus illicites ou nuisibles que leurs algorithmes mettent en avant auprès des mineurs ?"
+  },
+  {
+    "id": "allegements-cotisations-2-2-smic",
+    "scrutinNumber": 3480,
+    "polarity": 1,
+    "topic": "Cotisations sociales",
+    "text": "Faut-il limiter les allègements de cotisations patronales aux salaires inférieurs à 2,2 SMIC, au lieu de 3 SMIC ?"
+  },
+  {
+    "id": "arret-travail-teleconsultation",
+    "scrutinNumber": 4657,
+    "polarity": -1,
+    "topic": "Santé",
+    "text": "Faut-il interdire le renouvellement d'un arrêt de travail par téléconsultation ?"
+  },
+  {
+    "id": "bailleurs-flat-tax",
+    "scrutinNumber": 3318,
+    "polarity": 1,
+    "topic": "Logement",
+    "text": "Faut-il permettre aux propriétaires qui louent un logement à loyer plafonné et économe en énergie d'être imposés à taux forfaitaire, sans impôt sur la fortune immobilière sur ce logement ?"
+  },
+  {
+    "id": "contribution-grandes-entreprises",
+    "scrutinNumber": 3134,
+    "polarity": -1,
+    "topic": "Impôt sur les sociétés",
+    "text": "Faut-il prolonger en 2026, à taux réduits de moitié, la contribution exceptionnelle sur les bénéfices des très grandes entreprises ?"
+  },
+  {
+    "id": "contribution-laboratoires",
+    "scrutinNumber": 4497,
+    "polarity": 1,
+    "topic": "Santé",
+    "text": "Faut-il doubler, de 1,6 % à 3,2 %, la contribution additionnelle des laboratoires pharmaceutiques sur leurs ventes de médicaments remboursés ?"
+  },
+  {
+    "id": "controleurs-donnees-fraudeurs",
+    "scrutinNumber": 786,
+    "polarity": 1,
+    "topic": "Transports",
+    "text": "Les agents de contrôle des transports doivent-ils pouvoir obtenir de l'administration des informations sur les contrevenants pour recouvrer les amendes ?"
+  },
+  {
+    "id": "flat-tax-25",
+    "scrutinNumber": 3338,
+    "polarity": 1,
+    "topic": "Fiscalité du capital",
+    "text": "Faut-il baisser le prélèvement forfaitaire sur les revenus du capital (« flat tax ») de 30 % à 25 % ?"
+  },
+  {
+    "id": "fraude-fiscale-peines",
+    "scrutinNumber": 6001,
+    "polarity": -1,
+    "topic": "Fraude fiscale",
+    "text": "Faut-il alourdir les peines de prison et d'amende encourues pour fraude fiscale aggravée ?"
+  },
+  {
+    "id": "hydroelectricite-edf",
+    "scrutinNumber": 5327,
+    "polarity": -1,
+    "topic": "Énergie",
+    "text": "Faut-il obliger EDF à mettre aux enchères, au profit de ses concurrents, une partie de sa capacité de production hydroélectrique ?"
+  },
+  {
+    "id": "impot-minimum-multinationales",
+    "scrutinNumber": 3233,
+    "polarity": 1,
+    "topic": "Fiscalité internationale",
+    "text": "Faut-il appliquer l'impôt minimum de 15 % sur les groupes multinationaux dès 500 millions d'euros de chiffre d'affaires, au lieu de 750 millions ?"
+  },
+  {
+    "id": "impot-societes-33",
+    "scrutinNumber": 3207,
+    "polarity": 1,
+    "topic": "Impôt sur les sociétés",
+    "text": "Faut-il relever le taux normal de l'impôt sur les sociétés de 25 % à 33,3 %, avec des taux intermédiaires pour les PME ?"
+  },
+  {
+    "id": "interdiction-transports",
+    "scrutinNumber": 776,
+    "polarity": 1,
+    "topic": "Sécurité",
+    "text": "Un juge doit-il pouvoir interdire l'accès aux transports en commun, jusqu'à 3 ans, à une personne condamnée pour des délits commis dans ces transports ?"
+  },
+  {
+    "id": "jo-2030-transparence",
+    "scrutinNumber": 4763,
+    "polarity": 1,
+    "topic": "Sport",
+    "text": "Faut-il rendre publics le dossier de candidature et le contrat hôte des Jeux olympiques d'hiver 2030 ?"
+  },
+  {
+    "id": "locations-meublees",
+    "scrutinNumber": 3810,
+    "polarity": 1,
+    "topic": "Logement",
+    "text": "Faut-il supprimer le régime fiscal propre aux locations meublées, y compris les meublés de tourisme ?"
+  },
+  {
+    "id": "mayotte-sous-traitance",
+    "scrutinNumber": 548,
+    "polarity": 1,
+    "topic": "Outre-mer",
+    "text": "Pour la reconstruction de Mayotte après le cyclone, faut-il limiter la sous-traitance à deux niveaux dans tous les marchés de travaux ?"
+  },
+  {
+    "id": "pacte-dutreil-8-ans",
+    "scrutinNumber": 3366,
+    "polarity": 1,
+    "topic": "Transmission d'entreprise",
+    "text": "Pour bénéficier de l'avantage fiscal sur la transmission d'entreprise (pacte Dutreil), les héritiers devraient-ils conserver leurs parts 8 ans au lieu de 4 ?"
+  },
+  {
+    "id": "paris-sportifs-sport",
+    "scrutinNumber": 4173,
+    "polarity": 1,
+    "topic": "Sport",
+    "text": "Faut-il reverser à l'Agence nationale du sport la totalité de la taxe sur les paris sportifs en ligne ?"
+  },
+  {
+    "id": "passoires-thermiques",
+    "scrutinNumber": 219,
+    "polarity": 1,
+    "topic": "Logement",
+    "text": "Faut-il maintenir l'interdiction progressive de louer les logements les plus énergivores (« passoires thermiques ») ?"
+  },
+  {
+    "id": "pret-immobilier-employeur",
+    "scrutinNumber": 4486,
+    "polarity": 1,
+    "topic": "Logement",
+    "text": "Les employeurs devraient-ils pouvoir payer une partie des intérêts du prêt immobilier de leurs salariés primo-accédants, sans cotisations sociales sur cette aide ?"
+  },
+  {
+    "id": "recrutement-mineurs-narcotrafic",
+    "scrutinNumber": 1141,
+    "polarity": -1,
+    "topic": "Sécurité",
+    "text": "Faut-il punir la publication en ligne, accessible aux mineurs, d'offres de recrutement pour le trafic de drogue ?"
+  },
+  {
+    "id": "remises-generiques-pharmacies",
+    "scrutinNumber": 3558,
+    "polarity": 1,
+    "topic": "Santé",
+    "text": "Faut-il inscrire dans la loi des plafonds de remise plus élevés pour les pharmacies sur les médicaments génériques (jusqu'à 40 %) ?"
+  },
+  {
+    "id": "restitution-biens-culturels",
+    "scrutinNumber": 6167,
+    "polarity": 1,
+    "topic": "Culture",
+    "text": "Le Parlement doit-il pouvoir bloquer par un vote la restitution d'un bien culturel à un autre pays ?"
+  },
+  {
+    "id": "retraite-62-ans",
+    "scrutinNumber": 468,
+    "polarity": -1,
+    "topic": "Retraites",
+    "text": "Faut-il ramener l'âge légal de départ à la retraite de 64 à 62 ans ?"
+  },
+  {
+    "id": "tarif-postal-outre-mer",
+    "scrutinNumber": 4271,
+    "polarity": 1,
+    "topic": "Outre-mer",
+    "text": "Le tarif postal unique entre l'Hexagone et les outre-mer doit-il aussi s'appliquer aux petits colis commerciaux ?"
+  },
+  {
+    "id": "taxe-petits-colis",
+    "scrutinNumber": 3999,
+    "polarity": 1,
+    "topic": "Commerce",
+    "text": "Faut-il créer une taxe de 2 € par article sur les petits colis importés de pays hors Union européenne ?"
+  },
+  {
+    "id": "taxe-produits-non-recyclables",
+    "scrutinNumber": 3984,
+    "polarity": 1,
+    "topic": "Environnement",
+    "text": "Faut-il taxer les fabricants et importateurs de produits de consommation non recyclables qui ne relèvent d'aucune filière de recyclage ?"
+  },
+  {
+    "id": "visites-detenus-fin-de-vie",
+    "scrutinNumber": 1631,
+    "polarity": 1,
+    "topic": "Justice",
+    "text": "Les détenus hospitalisés en fin de vie doivent-ils avoir droit à au moins trois visites par semaine ?"
+  },
+  {
+    "id": "vote-correspondance-detenus",
+    "scrutinNumber": 2234,
+    "polarity": 1,
+    "topic": "Justice",
+    "text": "Faut-il limiter le vote par correspondance des détenus à la présidentielle, aux européennes et aux référendums ?"
+  }
+]
