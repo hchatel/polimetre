@@ -44,11 +44,11 @@ Two-product vision, Kandidator methodology v0, ADR-009 to ADR-013.
 - `src/domain/kandidator/`: `parameters.ts` (`MIN_EXPRESSED`), `types.ts`, `group-position.ts` (§8.1) already written and shared with S3.
 - Note for S4/D8: UDR (`PO847173`, until 2025-09-04) and UDDPLR (`PO872880`, from 2025-09-05) are distinct groups in the data. How (or whether) to relate them is an open editorial question; they are never merged automatically.
 
-### S3 — Domain: scoring & adaptive selection · `todo`
+### S3 — Domain: scoring & adaptive selection · `done`
 
-- `src/domain/kandidator/`, one file per formula as laid out in `ARCHITECTURE.md` ("Scoring code layout"): parameters, types, scoring (§8), question selection and stop rule (§9), injected random source.
-- Unit tests, including the guardrails of §9 (reachability, determinism, neutral-only).
-- Uses an obviously fictional test fixture (groups `A`, `B`, `C`…), never real political data.
+- `src/domain/kandidator/`, one file per formula (`ARCHITECTURE.md`, "Scoring code layout"): `stance.ts`, `agreement.ts`, `score.ts` (ranking, ties, "not enough data", neutral-only, per-question details for "why this result"), `question-selection.ts`, `stop-rule.ts`; all thresholds in `parameters.ts`.
+- Guardrails of §9 in `guardrails.test.ts` on a fictional fixture (`test-support.ts`, groups `A`–`E`). S4 can reuse `answerLike` and `playSession` for the reachability test on real data.
+- Interpretations made where §9 was silent are listed under "Implementation details" in `METHODOLOGY.md` §9, **to be validated by the maintainer**.
 
 ### S4 — Real question pool · `blocked` (D3, D8)
 
@@ -56,7 +56,7 @@ Two-product vision, Kandidator methodology v0, ADR-009 to ADR-013.
 - Zod schemas + test: every question references a scrutin in the dataset, every scrutin and association has a source URL.
 - Reachability test passes on the real data.
 
-### S5 — Quiz & result UI · `blocked` (S3)
+### S5 — Quiz & result UI · `todo`
 
 - Mobile-first. Quiz (one question per screen, Yes / Neutral / No), result (top 3 + associated candidates), "why this result" with links to scrutins.
 - Can start with the fixture data, then switch to S4 data.

@@ -42,7 +42,9 @@ src/domain/kandidator/
 ├── score.ts               §8.4  per-group score, ranking, ties, "not enough data"
 ├── question-selection.ts  §9    discrimination power + random pick (injected random)
 ├── stop-rule.ts           §9    when to end the session
-└── *.test.ts
+├── precision.ts           rounding of floating-point noise for ties and thresholds
+├── test-support.ts        fictional fixture, seeded random, simulated sessions (tests only)
+└── *.test.ts              guardrails.test.ts holds the mandatory tests of §9
 ```
 
 Each function's doc comment names the METHODOLOGY section it implements. The methodology page imports `parameters.ts` to display the current values.
