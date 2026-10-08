@@ -16,6 +16,11 @@ export const scrutinsFile = scrutinsFileSchema.parse(scrutinsJson);
 // TODO(D8): declared candidates and their sourced group associations, provided by the maintainer.
 export const candidates = candidatesSchema.parse(candidatesJson);
 
+/** Latest retrieval date of the official data the pool was generated from (ISO date-time). */
+export const dataRetrievedAt = scrutinsFile.sources
+  .map((source) => source.retrievedAt)
+  .reduce((latest, date) => (date > latest ? date : latest));
+
 const positionsOf = (scrutin: (typeof scrutinsFile.scrutins)[number]): Record<string, GroupPosition> => {
   return Object.fromEntries(scrutin.groups.map(({ ref, ...breakdown }) => [ref, groupPosition(breakdown)]));
 };

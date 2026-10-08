@@ -188,6 +188,7 @@ score(g) = mean of agreement(g, q) over those questions   → displayed as a per
 ```
 
 * All questions have the same weight in Kandidator.
+* The percentage is the score rounded to the nearest integer (display only). Ranks and ties come from the unrounded score, so two groups can show the same percentage with different ranks.
 * Equal scores are displayed as tied. For a stable display order, ties are sorted by group identifier.
 * A group compared on fewer than `MIN_COMPARED` questions (default `3`) is flagged as "not enough data" rather than ranked.
 

@@ -1,26 +1,93 @@
 @import "tailwindcss";
 
+/* Kandidator identity: cream paper, ink, electric violet and yellow. No party colour is used for groups. */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --paper: #fff8ec;
+  --ink: #1a1033;
+  --muted: #5e5873;
+  --surface: #ffffff;
+  --primary: #5b2eff;
+  --primary-ink: #ffffff;
+  --highlight: #ffd23f;
+  --highlight-soft: #fff1c2;
+  --line: #e7dff5;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --paper: #14102a;
+    --ink: #f5f0ff;
+    --muted: #b5aecb;
+    --surface: #1f1940;
+    --primary: #8a6bff;
+    --primary-ink: #14102a;
+    --highlight: #ffd23f;
+    --highlight-soft: #3d3412;
+    --line: #2e2757;
+  }
+}
+
+@theme inline {
+  --color-paper: var(--paper);
+  --color-ink: var(--ink);
+  --color-muted: var(--muted);
+  --color-surface: var(--surface);
+  --color-primary: var(--primary);
+  --color-primary-ink: var(--primary-ink);
+  --color-highlight: var(--highlight);
+  --color-highlight-soft: var(--highlight-soft);
+  --color-on-highlight: #1a1033;
+  --color-line: var(--line);
+  --font-sans: var(--font-inter);
+  --font-display: var(--font-bricolage);
+  --shadow-pop: 4px 4px 0 0 var(--ink);
+  --shadow-pop-sm: 2px 2px 0 0 var(--ink);
+  --shadow-pop-primary: 6px 6px 0 0 var(--primary);
+  --radius-card: 1.25rem;
+  --animate-enter: enter 0.25s ease-out;
+}
+
+@keyframes enter {
+  from {
+    opacity: 0;
+    transform: translateY(0.5rem);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* Yellow marker behind a word. */
+@utility highlight {
+  background-image: linear-gradient(transparent 55%, var(--highlight) 55%, var(--highlight) 92%, transparent 92%);
+  padding-inline: 0.1em;
+}
+
+/* The yellow marker sits behind light text in dark mode: keep the text dark on it. */
+@media (prefers-color-scheme: dark) {
+  .highlight {
+    color: #1a1033;
+    background-image: linear-gradient(var(--highlight), var(--highlight));
+    border-radius: 0.2em;
   }
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--paper);
+  color: var(--ink);
+}
+
+:focus-visible {
+  outline: 3px solid var(--primary);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
 }
