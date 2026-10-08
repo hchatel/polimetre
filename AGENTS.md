@@ -68,6 +68,8 @@ Unit tests sit next to the code as `*.test.ts`.
 - UI text in **French**. Code, comments and docs in **English**, except domain terms with no exact equivalent (`scrutin`), see `docs/GLOSSARY.md`.
 - No `any`, no type-system bypass to make code compile.
 - Small pure functions, explicit types, simple control flow.
+- Arrow functions (`const f = (…) => …`), not `function` declarations. Only exception: `export default function` for Next.js pages/layouts. Enforced by ESLint (`func-style`, `prefer-arrow-callback`).
+- Blank line before every `return` that follows another statement. Enforced by ESLint (`padding-line-between-statements`, auto-fixable with `pnpm lint --fix`).
 
 ## Commands
 
