@@ -48,6 +48,29 @@ scripts/ downloads the archives  → raw files (git-ignored)
 
 The script is run manually. No scheduled import in the MVP.
 
+```bash
+pnpm kandidator:download    # archives → .cache/kandidator/ (git-ignored), with retrieval date and sha256
+pnpm kandidator:shortlist   # → data/kandidator/shortlist-l17.json (+ .md), committed
+```
+
+Requires Node 24 (native TypeScript) and the `unzip` command. A failed download or an unexpected file format stops the run without touching the previous cache or shortlist.
+
+URLs used for the 17th legislature (confirmed on 2026-10-08):
+
+| Data | URL |
+|---|---|
+| Scrutins | `https://data.assemblee-nationale.fr/static/openData/repository/17/loi/scrutins/Scrutins.json.zip` |
+| Groups | `https://data.assemblee-nationale.fr/static/openData/repository/17/amo/tous_acteurs_mandats_organes_xi_legislature/AMO30_tous_acteurs_tous_mandats_tous_organes_historique.json.zip` |
+
+Notes from the data:
+
+* Each scrutin gives, per group, the group size at the date of the vote (`nombreMembresGroupe`), so **absent = members − (for + against + abstention + non-voting)**. No membership history is needed.
+* Use the historical AMO archive (AMO30): the "active deputies" archives (AMO10) lack groups dissolved during the legislature (e.g. UDR, `PO847173`), and AMO50 was a stale July 2024 snapshot.
+* `nonVotantsVolontaires` is not a separate category: it overlaps other counts (often equal to abstentions). It is kept as published but never used.
+* A few scrutins list the placeholder group `PO0` instead of real groups: they are excluded and listed in the shortlist file.
+* The "non inscrits" (`PO840056`) appear like a group in breakdowns but are not one: kept in the data, excluded from ranking.
+* The portal sometimes answers an HTML error page: the download checks the zip signature.
+
 ### Candidates
 
 Candidate declarations and candidate ↔ group associations are curated by hand, each with a source URL and a date (see `METHODOLOGY.md` §6).

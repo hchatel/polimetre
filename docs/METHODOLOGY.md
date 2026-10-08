@@ -249,6 +249,24 @@ Process (see `DATA_SOURCES.md`):
 1. A deterministic script ranks the scrutins of the current legislature by discrimination and cohesion.
 2. The maintainer picks the scrutins and writes or validates a neutral question for each. An LLM may draft the wording; a human validates it.
 
+### 11.1 Shortlist ranking (v0)
+
+Implemented in `scripts/kandidator/rank.ts`; constants in `scripts/kandidator/config.ts`. It only orders candidates for human review: it is not part of the user score.
+
+For each scrutin, using the group position of §8.1 (`MIN_EXPRESSED` included) over parliamentary groups only (non-inscrits are excluded):
+
+```text
+eligible        at least MIN_KNOWN_GROUPS_RATIO (2/3) of the groups have a known position
+discrimination  = max(position) − min(position)              ∈ [0, 2]
+cohesion        = mean of |position| over known groups         ∈ [0, 1]
+score           = discrimination × cohesion                    ∈ [0, 2]
+participation   = expressed votes / members, over the groups   (tie-break only)
+```
+
+Diversity: two scrutins have the **same split** when no group known in both has a different sign (`+`, `−` or `0`); unknown positions never make two splits different. The shortlist is built greedily: at each step, the scrutin with the best `score / (1 + number of kept scrutins with the same split)` is kept. Ties go to the highest participation, then to the lowest scrutin number. `SHORTLIST_SIZE` (150) scrutins are kept.
+
+Scrutins with known upstream data issues (e.g. placeholder group reference `PO0`) are excluded and listed in the shortlist file, never corrected by hand.
+
 Known limitation: texts adopted without a vote (Article 49.3) cannot appear in the pool.
 
 ---
