@@ -209,9 +209,17 @@ Goal: reach a stable top 3 in few questions.
    * `MAX_QUESTIONS` (default `12`) questions have been asked;
    * the pool is exhausted.
 
+Implementation details (`src/domain/kandidator/`):
+
+* **Top groups** for step 2 are ranked by score over every group compared on at least one question: `MIN_COMPARED` only applies to the ranking shown to the user. Ties at the `TOP_K` cut are broken by group identifier.
+* **Spread** only uses known stances; with fewer than two, the power is `0`.
+* **Questions asked** for `MAX_QUESTIONS` include Neutral answers; `MIN_QUESTIONS` counts Yes/No answers only.
+* The **gap rule** needs at least two ranked groups (compared on `MIN_COMPARED` questions or more).
+* Scores, powers and gaps are rounded to 9 decimals so that mathematically equal values compare equal (floating-point noise).
+
 ### Mandatory guardrail tests
 
-* **Reachability**: for every group, a simulated user who answers exactly like that group (Yes if stance > 0, No if stance < 0) gets that group ranked first.
+* **Reachability**: for every group, a simulated user who answers exactly like that group (Yes if stance > 0, No if stance < 0, Neutral if 0 or unknown) gets that group ranked first, alone. Checked both on the whole pool and at the end of adaptive sessions (several random seeds).
 * **Determinism**: the same answers always produce the same scores.
 * **Neutral answers only**: produces no ranking and an explicit message instead.
 
