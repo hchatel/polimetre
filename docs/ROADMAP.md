@@ -58,15 +58,16 @@ Two-product vision, Kandidator methodology v0, ADR-009 to ADR-013.
 - Review files with sources and caveats: `data/kandidator/question-pool-draft.md` (D3), `data/kandidator/candidates-review.md` (D8).
 - Follow-up: the 6 pending D8 cases; immigration is not covered by the pool.
 
-### S5 — Quiz & result UI · `todo`
+### S5 — Quiz & result UI · `done`
 
-- Mobile-first. Quiz (one question per screen, Yes / Neutral / No), result (top 3 + associated candidates), "why this result" with links to scrutins.
-- Can start with the fixture data, then switch to S4 data.
-- E2E: full journey on desktop and mobile.
+- Routes `/` (minimal home), `/quiz`, `/resultat?r=…` on the S4 data (`ARCHITECTURE.md`, "MVP scope"). Maintainer choices (2026-10-08): answers already encoded in the result URL, a « Question précédente » button that undoes the last answer, and a minimal home page until S6.
+- Quiz (`src/components/kandidator/quiz.tsx`): one question per screen, Oui / Neutre / Non, rendered on the client only. Result (`src/components/kandidator/result/`): groups ranked 1 to 3 (ties included) with percentages and sourced candidate associations, the other groups, the "not enough data" groups, the comparison notice, and « Pourquoi ce résultat ? » with each group's breakdown per scrutin (for / against / abstention / non-voting / absent) and the link to the scrutin.
+- Unit tests: `share-url.test.ts`, `result-view.test.ts`. E2E (`e2e/kandidator.spec.ts`, desktop + mobile): full journey, previous question, Neutral only, invalid link, no horizontal scroll.
+- Not done here: a share button and social preview (S6). Declared candidates without a group association are not listed on the result page.
 
-### S6 — Landing, methodology page, sharing · `todo` (after S5)
+### S6 — Landing, methodology page, sharing · `in progress`
 
-- Landing page with pitch, short method and sources.
+- Landing page with pitch, short method and sources · `done` (2026-10-08). Visual identity "Pop & ludique" chosen by the maintainer: Tailwind theme tokens in `globals.css` (cream paper, ink, violet `primary`, yellow `highlight`, hard "pop" shadows), Bricolage Grotesque + Inter, light and dark. Shared primitives in `src/components/ui/`, header and footer in `src/components/site/`. Quiz and result restyled without changing their logic: progress bar, chunky answer buttons (Oui and Non styled identically), similarity bars of the same colour for every group. Landing sections (`src/components/landing/`): hero, example question, key figures, how it works, topics, things to know, final call to action. All figures come from the pool (`src/server/kandidator/landing-view.ts`, unit tested). **To validate by the maintainer:** the example question `LANDING_EXAMPLE_QUESTION_ID = "algorithmes-mineurs"`.
 - Public methodology page: every formula of `METHODOLOGY.md` §8–9 in plain French, with a worked example; parameter values imported from `parameters.ts`.
 - Result encoded in the URL; social preview image.
 

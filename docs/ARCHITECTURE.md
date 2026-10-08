@@ -28,6 +28,16 @@ scripts/               manual scrutin download + ranking (dev-only, never import
 
 Answers live in client state and in the shareable result URL only.
 
+Routes (ROADMAP S5):
+
+```text
+/           minimal home page (full landing in S6)
+/quiz       adaptive quiz, rendered on the client only (random question order)
+/resultat   result from ?r=<questionId>:<o|n|0>,… (o = oui, n = non, 0 = neutre, in answer order)
+```
+
+`src/data/kandidator/share-url.ts` encodes the answers and validates the `r` parameter with Zod. The result page decodes it on the server, without storing or logging it, then `src/server/kandidator/result-view.ts` combines the domain score with the display data of the pool (group names, candidate associations, scrutin breakdowns and sources).
+
 ### Scoring code layout
 
 Each formula of `METHODOLOGY.md` §8–9 is a small pure function in its own file, with a test file next to it, so it can be read, tested and changed in isolation:
@@ -121,6 +131,11 @@ It should not contain political business logic.
 Reusable UI components.
 
 Components should receive data rather than fetch political data directly.
+
+* `components/ui/`: design-system primitives (`ButtonLink`, `Card`, `Chip`, `cn`). Colours, fonts and shadows are Tailwind theme tokens defined in `app/globals.css` (`paper`, `ink`, `muted`, `surface`, `primary`, `highlight`, `line`, `shadow-pop`…); components use these tokens, never raw palette colours. Groups all share the same colour: no party colour.
+* `components/site/`: header, footer and the product name (`brand.ts`, working name, D7).
+* `components/landing/`: home page sections. They receive `LandingView` (`server/kandidator/landing-view.ts`), in which every figure is derived from the pool.
+* `components/kandidator/`: quiz and result.
 
 ### `domain/`
 
