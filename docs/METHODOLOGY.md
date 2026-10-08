@@ -106,6 +106,12 @@ Rules:
 * Only declared candidates, with a source for the declaration.
 * Each association has a type (e.g. "member of the party forming the group", "supported by the group") and a source.
 * A group may have zero, one or several associated candidates. A candidate may have no group.
+* **Declared candidate**: a person who has declared a candidacy for the presidential election itself. People running only in a primary or a nomination process are not listed until they are designated (maintainer decision, 2026-10-08).
+* **Acceptable sources** (declaration and association): the official announcement of the candidate or party (website, communiqué), or recognised press (news agencies, national and regional dailies, LCP, Public Sénat…). Wikipedia, social networks, video platforms and aggregators are not cited.
+* **Association types**:
+  * *group member*: the candidate is a deputy sitting in the group (source: their page on assemblee-nationale.fr);
+  * *party forming the group*: the candidate leads or belongs to a party whose deputies form the group (one source for the person's party, one for the party–group link);
+  * *group support*: the group or its president publicly supports the candidacy (dated source).
 * The result page always says that the comparison is based on the group's votes, not on the candidate's own votes or programme.
 
 ---
@@ -206,7 +212,7 @@ Goal: reach a stable top 3 in few questions.
 3. Pick at random among questions whose power is at least `RANDOM_BAND` (default `90%`) of the best one. The random source is injected, so tests are reproducible.
 4. **Stop** when one of these is true:
    * at least `MIN_QUESTIONS` (default `6`) Yes/No answers **and** the gap between the 1st and 2nd group is at least `STOP_GAP` (default `15` points);
-   * `MAX_QUESTIONS` (default `12`) questions have been asked;
+   * `MAX_QUESTIONS` (default `18`) questions have been asked;
    * the pool is exhausted.
 
 Implementation details (`src/domain/kandidator/`):
@@ -214,6 +220,7 @@ Implementation details (`src/domain/kandidator/`):
 * **Top groups** for step 2 are ranked by score over every group compared on at least one question: `MIN_COMPARED` only applies to the ranking shown to the user. Ties at the `TOP_K` cut are broken by group identifier.
 * **Spread** only uses known stances; with fewer than two, the power is `0`.
 * **Questions asked** for `MAX_QUESTIONS` include Neutral answers; `MIN_QUESTIONS` counts Yes/No answers only.
+* `MAX_QUESTIONS` went from `12` to `18` (maintainer decision, 2026-10-08). On the real pool, small groups often have an unknown position (fewer than `MIN_EXPRESSED` votes expressed), so a user answering like them gives many Neutral answers. With `12`, adaptive reachability failed for about 7% of the sessions for GDR (500 seeds); with `18`, no session failed for any group. Most sessions still stop earlier through the gap rule.
 * The **gap rule** needs at least two ranked groups (compared on `MIN_COMPARED` questions or more).
 * Scores, powers and gaps are rounded to 9 decimals so that mathematically equal values compare equal (floating-point noise).
 
@@ -255,7 +262,8 @@ The pool should prioritize scrutins that are:
 Process (see `DATA_SOURCES.md`):
 
 1. A deterministic script ranks the scrutins of the current legislature by discrimination and cohesion.
-2. The maintainer picks the scrutins and writes or validates a neutral question for each. An LLM may draft the wording; a human validates it.
+2. The maintainer picks the scrutins and writes or validates a neutral question for each. An LLM may draft the wording; a human validates it. Each draft is checked against the official text of the vote (amendment, article or bill) to set the polarity. A scrutin whose content cannot be verified is dropped.
+3. The groups compared are the parliamentary groups of the legislature, without the non-inscrits and without UDR (`PO847173`), which was replaced by UDDPLR (`PO872880`) on 2025-09-05 (ADR-014). A unit test checks the §9 reachability guardrail on the real pool.
 
 ### 11.1 Shortlist ranking (v0)
 
@@ -271,7 +279,7 @@ score           = discrimination × cohesion                    ∈ [0, 2]
 participation   = expressed votes / members, over the groups   (tie-break only)
 ```
 
-Diversity: two scrutins have the **same split** when no group known in both has a different sign (`+`, `−` or `0`); unknown positions never make two splits different. The shortlist is built greedily: at each step, the scrutin with the best `score / (1 + number of kept scrutins with the same split)` is kept. Ties go to the highest participation, then to the lowest scrutin number. `SHORTLIST_SIZE` (150) scrutins are kept.
+Diversity: two scrutins have the **same split** when no group known in both has a different sign (`+`, `−` or `0`); unknown positions never make two splits different. The shortlist is built greedily: at each step, the scrutin with the best `score / (1 + number of kept scrutins with the same split)` is kept. Ties go to the highest participation, then to the lowest scrutin number. `SHORTLIST_SIZE` (150) scrutins are kept. Scrutins listed in `SHORTLIST_REQUIRED` (maintainer choice, e.g. a clearer vote with the same split as a ranked one) are then appended when not already kept; each must be eligible.
 
 Scrutins with known upstream data issues (e.g. placeholder group reference `PO0`) are excluded and listed in the shortlist file, never corrected by hand.
 

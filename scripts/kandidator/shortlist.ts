@@ -17,6 +17,7 @@ import {
   OUTPUT_MARKDOWN,
   RETRIEVAL_FILE,
   SCRUTINS_DIR,
+  SHORTLIST_REQUIRED,
   SHORTLIST_SIZE,
 } from "./config.ts";
 import { normalizeGroup, normalizeScrutin, type Scrutin } from "./normalize.ts";
@@ -80,6 +81,7 @@ const main = (): void => {
     excludedGroupRefs: [NON_INSCRITS_REF],
     minKnownGroupsRatio: MIN_KNOWN_GROUPS_RATIO,
     size: SHORTLIST_SIZE,
+    required: SHORTLIST_REQUIRED,
   };
   const { shortlist, eligible } = rankScrutins(scrutins, options);
   const input = { retrieval, options, scrutinsRead: files.length, eligible, excluded, groups, shortlist };

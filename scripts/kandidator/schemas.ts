@@ -84,3 +84,37 @@ export const retrievalSchema = z.object({
 });
 
 export type Retrieval = z.infer<typeof retrievalSchema>;
+
+/** Written by shortlist.ts (output.ts), read by pool.ts. Only the fields used by the pool are validated. */
+export const shortlistFileSchema = z.object({
+  legislature: z.number().int(),
+  sources: retrievalSchema.shape.sources,
+  groups: z.array(
+    z.object({
+      ref: z.string().min(1),
+      abbreviation: z.string().min(1),
+      name: z.string().min(1),
+    }),
+  ),
+  shortlist: z.array(
+    z.object({
+      number: z.number().int().positive(),
+      uid: z.string().min(1),
+      date: isoDate,
+      title: z.string().min(1),
+      sourceUrl: z.url(),
+      groups: z.array(
+        z.object({
+          ref: z.string().min(1),
+          for: z.number().int().nonnegative(),
+          against: z.number().int().nonnegative(),
+          abstention: z.number().int().nonnegative(),
+          nonVoting: z.number().int().nonnegative(),
+          absent: z.number().int().nonnegative(),
+        }),
+      ),
+    }),
+  ),
+});
+
+export type ShortlistFile = z.infer<typeof shortlistFileSchema>;

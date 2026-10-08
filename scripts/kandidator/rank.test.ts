@@ -4,7 +4,7 @@ import { analyzeScrutin, rankScrutins, sameSplit, type RankingOptions } from "./
 import { rawScrutinSchema } from "./schemas.ts";
 import { rawScrutin, type FixtureGroup } from "./test-fixtures.ts";
 
-const options: RankingOptions = { excludedGroupRefs: ["PO_NI"], minKnownGroupsRatio: 2 / 3, size: 10 };
+const options: RankingOptions = { excludedGroupRefs: ["PO_NI"], minKnownGroupsRatio: 2 / 3, size: 10, required: [] };
 
 const scrutin = (number: number, groups: FixtureGroup[]): Scrutin => {
   const result = normalizeScrutin(rawScrutinSchema.parse(rawScrutin(number, groups)));
@@ -112,6 +112,17 @@ describe("rankScrutins (§11)", () => {
     const { shortlist, eligible } = rankScrutins(scrutins, { ...options, size: 1 });
     expect(eligible).toBe(2);
     expect(shortlist).toHaveLength(1);
+  });
+
+  it("appends required scrutins after the ranked ones, without duplicates", () => {
+    const scrutins = [scrutin(1, ab), scrutin(2, ac), scrutin(3, ab), scrutin(4, ac)];
+    const { shortlist } = rankScrutins(scrutins, { ...options, size: 2, required: [4, 1, 3, 3] });
+    expect(shortlist.map((a) => a.scrutin.number)).toEqual([1, 2, 3, 4]);
+  });
+
+  it("rejects a required scrutin that is not eligible", () => {
+    const scrutins = [scrutin(1, ab), scrutin(2, [group("PO_A", 1), group("PO_B", null), group("PO_C", null)])];
+    expect(() => rankScrutins(scrutins, { ...options, required: [2] })).toThrow("Required scrutin 2");
   });
 
   it("is deterministic regardless of input order", () => {

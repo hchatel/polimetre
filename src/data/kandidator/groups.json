@@ -1,0 +1,57 @@
+[
+  {
+    "ref": "PO845401",
+    "abbreviation": "RN",
+    "name": "Rassemblement National"
+  },
+  {
+    "ref": "PO845407",
+    "abbreviation": "EPR",
+    "name": "Ensemble pour la République"
+  },
+  {
+    "ref": "PO845413",
+    "abbreviation": "LFI-NFP",
+    "name": "La France insoumise - Nouveau Front Populaire"
+  },
+  {
+    "ref": "PO845419",
+    "abbreviation": "SOC",
+    "name": "Socialistes et apparentés"
+  },
+  {
+    "ref": "PO845425",
+    "abbreviation": "DR",
+    "name": "Droite Républicaine"
+  },
+  {
+    "ref": "PO845439",
+    "abbreviation": "ECOS",
+    "name": "Écologiste et Social"
+  },
+  {
+    "ref": "PO845454",
+    "abbreviation": "DEM",
+    "name": "Les Démocrates"
+  },
+  {
+    "ref": "PO845470",
+    "abbreviation": "HOR",
+    "name": "Horizons & Indépendants"
+  },
+  {
+    "ref": "PO845485",
+    "abbreviation": "LIOT",
+    "name": "Libertés, Indépendants, Outre-mer et Territoires"
+  },
+  {
+    "ref": "PO845514",
+    "abbreviation": "GDR",
+    "name": "Gauche Démocrate et Républicaine"
+  },
+  {
+    "ref": "PO872880",
+    "abbreviation": "UDDPLR",
+    "name": "Union des droites pour la République"
+  }
+]
